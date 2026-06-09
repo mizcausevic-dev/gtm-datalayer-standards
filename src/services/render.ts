@@ -117,6 +117,45 @@ function pageFrame(title: string, description: string, activePath: string, body:
 </html>`;
 }
 
+function renderProductDepth() {
+  return `<section class="sec">
+      <div class="sec-head">
+        <span class="sec-num">00</span>
+        <div>
+          <h2 class="sec-title">Product depth</h2>
+          <p class="sec-lead">GTM Datalayer Standards is an analytics-governance surface for keeping event contracts, campaign context, consent posture, and downstream handoff quality aligned before reporting trust collapses.</p>
+        </div>
+      </div>
+      <div class="card-grid">
+        <article class="acard lane-card">
+          <span class="metric-chip">Product depth</span>
+          <h3>What this product does</h3>
+          <p class="lane-copy">It converts dataLayer events into a governed contract catalog: event name, required fields, route owner, downstream system, payload integrity, and business impact stay visible together. Non-technical leaders see why dashboards disagree. Technical teams see where instrumentation drift starts.</p>
+        </article>
+        <article class="acard lane-card">
+          <span class="metric-chip">GTM analyst lens</span>
+          <h3>Where revenue teams use it</h3>
+          <p class="lane-copy">Use it before campaign launches, pricing tests, form changes, and funnel redesigns to confirm the GTM data contract is strong enough to support attribution, scoring, routing, experimentation, and board reporting.</p>
+        </article>
+        <article class="acard lane-card">
+          <span class="metric-chip">Value architecture</span>
+          <h3>Where the money leaks</h3>
+          <p class="lane-copy">The system surfaces revenue leakage from missing UTMs, inconsistent product identifiers, consent gaps, broken CRM handoffs, and analytics events that fire but do not carry enough commercial context to drive decisions.</p>
+        </article>
+        <article class="acard lane-card">
+          <span class="metric-chip">Technical proof</span>
+          <h3>What is inspectable</h3>
+          <p class="lane-copy">Static routes, API-style payloads, seeded event contracts, failure-mode records, prerendered output, tests, smoke checks, and screenshot generation make this a real instrumentation-governance demo rather than a decorative landing page.</p>
+        </article>
+        <article class="acard lane-card">
+          <span class="metric-chip">Portfolio pattern</span>
+          <h3>What these repos have in common</h3>
+          <p class="lane-copy">Each Kinetic Gain surface converts operational evidence into board-readable decisions: owner, signal, model, risk, value, route, and verification stay visible together.</p>
+        </article>
+      </div>
+    </section>`;
+}
+
 export function renderOverview() {
   const stats = summary();
   const riskyContracts = eventContracts().filter((contract) => contract.health !== "healthy");
@@ -173,6 +212,7 @@ export function renderOverview() {
         </div>
       </div>
     </section>
+    ${renderProductDepth()}
     <section class="sec">
       <div class="sec-head">
         <span class="sec-num">01</span>
@@ -240,7 +280,8 @@ export function renderEventContracts() {
           </tbody>
         </table>
       </div>
-    </section>`
+    </section>
+    ${renderProductDepth()}`
   );
 }
 
